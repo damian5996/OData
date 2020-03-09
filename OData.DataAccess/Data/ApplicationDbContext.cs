@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using OData.DataAccess.Configuration;
+using OData.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -23,7 +24,11 @@ namespace OData.DataAccess.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<Article>()
+                .HasKey(a => a.Id);
 
+            builder.Entity<ArticleCategory>()
+                .HasKey(a => a.Id);
         }
 
     }

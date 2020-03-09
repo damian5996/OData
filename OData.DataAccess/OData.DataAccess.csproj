@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200309151108_Added_Article_And_ArticleCategory_Models.cs" />
+    <Compile Remove="Migrations\20200309151108_Added_Article_And_ArticleCategory_Models.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Repository\Interfaces\" />
   </ItemGroup>
 
@@ -15,6 +20,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OData.Models\OData.Models.csproj" />
   </ItemGroup>
 
 </Project>
