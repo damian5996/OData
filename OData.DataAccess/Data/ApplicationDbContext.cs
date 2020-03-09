@@ -22,6 +22,9 @@ namespace OData.DataAccess.Data
             optionsBuilder.UseSqlServer(_connectionStringSettings.LocalDB);
         }
 
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<ArticleCategory> ArticleCategories { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Article>()

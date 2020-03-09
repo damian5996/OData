@@ -12,6 +12,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using OData.DataAccess.Configuration;
 using OData.DataAccess.Data;
+using OData.DataAccess.Repository;
+using OData.DataAccess.Repository.Interfaces;
 
 namespace OData
 {
@@ -32,6 +34,9 @@ namespace OData
             services.AddDbContext<ApplicationDbContext>();
 
             services.Configure<ConnectionStringSettings>(Configuration.GetSection("ConnectionStrings"));
+
+            services.AddScoped(typeof(IArticleRepository), typeof(ArticleRepository));
+            services.AddScoped(typeof(IArticleCategoryRepository), typeof(ArticleCategoryRepository));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
