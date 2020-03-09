@@ -1,6 +1,12 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using OData.DataAccess.Data;
+using OData.DataAccess.Repository.Interfaces;
+using OData.Models.Entities;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace OData.DataAccess.Repository
 {
