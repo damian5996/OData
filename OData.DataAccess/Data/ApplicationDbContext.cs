@@ -12,9 +12,9 @@ namespace OData.DataAccess.Data
     {
         private readonly ConnectionStringSettings _connectionStringSettings;
 
-        public ApplicationDbContext(IOptions<ConnectionStringSettings> options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IOptions<ConnectionStringSettings> optionsAccessor) : base(options)
         {
-            _connectionStringSettings = options.Value;
+            _connectionStringSettings = optionsAccessor.Value;
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

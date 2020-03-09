@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using OData.ArticleManager;
 using OData.DataAccess.Configuration;
 using OData.DataAccess.Data;
 using OData.DataAccess.Repository;
@@ -37,6 +38,8 @@ namespace OData
 
             services.AddScoped(typeof(IArticleRepository), typeof(ArticleRepository));
             services.AddScoped(typeof(IArticleCategoryRepository), typeof(ArticleCategoryRepository));
+
+            services.AddScoped(typeof(IArticleService), typeof(ArticleService));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

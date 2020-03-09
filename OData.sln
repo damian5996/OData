@@ -11,9 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OData.Models", "OData.Model
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLogic", "BusinessLogic", "{953BD4E4-2EBB-4905-8688-42763AE24E55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OData.ArticleService", "OData.ArticleService\OData.ArticleService.csproj", "{2EFFD371-112D-4997-AF0E-B9AFAB592ED2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OData.ArticleManager", "OData.ArticleService\OData.ArticleManager.csproj", "{2EFFD371-112D-4997-AF0E-B9AFAB592ED2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OData.ArticleCategoryService", "OData.ArticleCategoryService\OData.ArticleCategoryService.csproj", "{CAE55FFA-E5B4-414B-884D-E6D192127933}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OData.ArticleCategoryManager", "OData.ArticleCategoryService\OData.ArticleCategoryManager.csproj", "{CAE55FFA-E5B4-414B-884D-E6D192127933}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

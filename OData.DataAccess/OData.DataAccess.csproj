@@ -7,6 +7,8 @@
   <ItemGroup>
     <Compile Remove="Migrations\20200309151108_Added_Article_And_ArticleCategory_Models.cs" />
     <Compile Remove="Migrations\20200309151108_Added_Article_And_ArticleCategory_Models.Designer.cs" />
+    <Compile Remove="Migrations\20200309200049_tst.cs" />
+    <Compile Remove="Migrations\20200309200049_tst.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
