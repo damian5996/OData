@@ -1,20 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNet.OData.Builder;
+using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Microsoft.OData.Edm;
 using OData.ArticleManager;
 using OData.DataAccess.Configuration;
 using OData.DataAccess.Data;
 using OData.DataAccess.Repository;
 using OData.DataAccess.Repository.Interfaces;
+using OData.Models.Entities;
+using System.Linq;
 
 namespace OData
 {
@@ -30,7 +28,8 @@ namespace OData
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers(options => options.EnableEndpointRouting = false).AddNewtonsoftJson();
+            services.AddOData();
 
             services.AddDbContext<ApplicationDbContext>();
 
@@ -52,13 +51,10 @@ namespace OData
 
             app.UseHttpsRedirection();
 
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
+            app.UseMvc(routeBuilder =>
             {
-                endpoints.MapControllers();
+                routeBuilder.EnableDependencyInjection();
+                routeBuilder.Select().Filter().Expand();
             });
         }
     }

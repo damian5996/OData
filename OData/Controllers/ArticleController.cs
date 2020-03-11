@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OData.ArticleManager;
@@ -22,6 +23,7 @@ namespace OData.Api.Controllers
 
         // GET: api/Article
         [HttpGet]
+        [EnableQuery()]
         public async Task<IEnumerable<Article>> Get()
         {
             return await _articleService.GetAllArticles();
