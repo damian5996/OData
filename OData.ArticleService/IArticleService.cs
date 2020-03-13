@@ -1,4 +1,6 @@
-﻿using OData.Models.Entities;
+﻿using OData.ArticleManager.ViewModels;
+using OData.Models;
+using OData.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,6 +10,7 @@ namespace OData.ArticleManager
 {
     public interface IArticleService
     {
-        Task<List<Article>> GetAllArticles();
+        Task<AllArticlesViewModel> GetAllArticles();
+        Task<ArticleViewModel> GetArticle(int id);
     }
 }

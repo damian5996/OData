@@ -24,9 +24,18 @@ namespace OData.Api.Controllers
         // GET: api/Article
         [HttpGet]
         [EnableQuery()]
-        public async Task<IEnumerable<Article>> Get()
+        public async Task<IActionResult> Get()
         {
-            return await _articleService.GetAllArticles();
+            var result = await _articleService.GetAllArticles();
+            return Ok(result);
         }
+
+        //[HttpGet]
+        //[EnableQuery()]
+        //public async Task<IActionResult> Get(int id)
+        //{
+        //    var result = await _articleService.GetArticle(id);
+        //    return Ok(result);
+        //}
     }
 }

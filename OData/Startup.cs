@@ -50,12 +50,20 @@ namespace OData
             }
 
             app.UseHttpsRedirection();
-
             app.UseMvc(routeBuilder =>
             {
                 routeBuilder.EnableDependencyInjection();
                 routeBuilder.Select().Filter().Expand();
+                //routeBuilder.MapODataServiceRoute("odata", "odata", GetEdmModel());
             });
         }
+
+        //private static IEdmModel GetEdmModel()
+        //{
+        //    ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
+        //    builder.EntitySet<Article>("Articles");
+        //    builder.EntitySet<ArticleCategory>("ArticleCategories");
+        //    return builder.GetEdmModel();
+        //}
     }
 }
